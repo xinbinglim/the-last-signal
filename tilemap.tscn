@@ -1,0 +1,179 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbtqk8sf7fhka"]
+
+[ext_resource type="Texture2D" uid="uid://nwtcvle5v5e2" path="res://Assets/TileSet v1.0.png" id="1_1i3gi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsmjb"]
+size = Vector2(32, 32)
+
+[node name="Tilemap" type="Node2D"]
+
+[node name="0" type="Sprite2D" parent="."]
+position = Vector2(37, 34)
+texture = ExtResource("1_1i3gi")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+metadata/_edit_group_ = true
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(74, 34)
+texture = ExtResource("1_1i3gi")
+region_enabled = true
+region_rect = Rect2(32, 0, 32, 32)
+metadata/_edit_group_ = true
+
+[node name="2" type="Sprite2D" parent="."]
+position = Vector2(73, 70)
+texture = ExtResource("1_1i3gi")
+region_enabled = true
+region_rect = Rect2(32, 32, 32, 32)
+metadata/_edit_group_ = true
+
+[node name="3" type="Sprite2D" parent="."]
+position = Vector2(111, 34)
+texture = ExtResource("1_1i3gi")
+region_enabled = true
+region_rect = Rect2(64, 0, 32, 32)
+metadata/_edit_group_ = true
+
+[node name="4" type="Sprite2D" parent="."]
+position = Vector2(37, 69)
+texture = ExtResource("1_1i3gi")
+region_enabled = true
+region_rect = Rect2(0, 32, 32, 32)
+metadata/_edit_group_ = true
+
+[node name="5" type="Sprite2D" parent="."]
+position = Vector2(112, 69)
+texture = ExtResource("1_1i3gi")
+region_enabled = true
+region_rect = Rect2(64, 32, 32, 32)
+metadata/_edit_group_ = true
+
+[node name="6" type="Sprite2D" parent="."]
+position = Vector2(37, 105)
+texture = ExtResource("1_1i3gi")
+region_enabled = true
+region_rect = Rect2(0, 64, 32, 32)
+metadata/_edit_group_ = true
+
+[node name="7" type="Sprite2D" parent="."]
+position = Vector2(73, 105)
+texture = ExtResource("1_1i3gi")
+region_enabled = true
+region_rect = Rect2(32, 64, 32, 32)
+metadata/_edit_group_ = true
+
+[node name="8" type="Sprite2D" parent="."]
+position = Vector2(111, 104)
+texture = ExtResource("1_1i3gi")
+region_enabled = true
+region_rect = Rect2(64, 64, 32, 32)
+metadata/_edit_group_ = true
+
+[node name="9" type="Sprite2D" parent="."]
+position = Vector2(154, 35)
+texture = ExtResource("1_1i3gi")
+region_enabled = true
+region_rect = Rect2(96, 0, 32, 32)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="9/StaticBody2D"]
+shape = SubResource("RectangleShape2D_nsmjb")
+
+[node name="10" type="Sprite2D" parent="."]
+position = Vector2(192, 35)
+texture = ExtResource("1_1i3gi")
+region_enabled = true
+region_rect = Rect2(128, 0, 32, 32)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="10/StaticBody2D"]
+shape = SubResource("RectangleShape2D_nsmjb")
+
+[node name="11" type="Sprite2D" parent="."]
+position = Vector2(230, 36)
+texture = ExtResource("1_1i3gi")
+region_enabled = true
+region_rect = Rect2(160, 0, 32, 32)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="11/StaticBody2D"]
+shape = SubResource("RectangleShape2D_nsmjb")
+
+[node name="12" type="Sprite2D" parent="."]
+position = Vector2(155, 72)
+texture = ExtResource("1_1i3gi")
+region_enabled = true
+region_rect = Rect2(96, 32, 32, 32)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="12"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="12/StaticBody2D"]
+shape = SubResource("RectangleShape2D_nsmjb")
+
+[node name="13" type="Sprite2D" parent="."]
+position = Vector2(194, 71)
+texture = ExtResource("1_1i3gi")
+region_enabled = true
+region_rect = Rect2(128, 32, 32, 32)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="13"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="13/StaticBody2D"]
+shape = SubResource("RectangleShape2D_nsmjb")
+
+[node name="14" type="Sprite2D" parent="."]
+position = Vector2(233, 74)
+texture = ExtResource("1_1i3gi")
+region_enabled = true
+region_rect = Rect2(160, 32, 32, 32)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="14"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="14/StaticBody2D"]
+shape = SubResource("RectangleShape2D_nsmjb")
+
+[node name="15" type="Sprite2D" parent="."]
+position = Vector2(157, 108)
+texture = ExtResource("1_1i3gi")
+region_enabled = true
+region_rect = Rect2(96, 64, 32, 32)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="15"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="15/StaticBody2D"]
+shape = SubResource("RectangleShape2D_nsmjb")
+
+[node name="16" type="Sprite2D" parent="."]
+position = Vector2(197, 110)
+texture = ExtResource("1_1i3gi")
+region_enabled = true
+region_rect = Rect2(128, 64, 32, 32)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="16"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="16/StaticBody2D"]
+shape = SubResource("RectangleShape2D_nsmjb")
+
+[node name="17" type="Sprite2D" parent="."]
+position = Vector2(237, 110)
+texture = ExtResource("1_1i3gi")
+region_enabled = true
+region_rect = Rect2(160, 64, 32, 32)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="17"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="17/StaticBody2D"]
+shape = SubResource("RectangleShape2D_nsmjb")

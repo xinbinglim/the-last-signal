@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://vqybqdwhrdpd"]
+
+[ext_resource type="Texture2D" uid="uid://b8eopsu8wgg1e" path="res://Assets/Game Over.png" id="1_chhgw"]
+
+[sub_resource type="GDScript" id="GDScript_chhgw"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file('res://UI.tscn')
+"
+
+[node name="Game Over" type="Node2D"]
+script = SubResource("GDScript_chhgw")
+
+[node name="Title" type="TextureRect" parent="."]
+offset_left = 142.0
+offset_top = 133.0
+offset_right = 1128.0
+offset_bottom = 1691.0
+texture = ExtResource("1_chhgw")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 481.0
+offset_top = 403.0
+offset_right = 639.5
+offset_bottom = 461.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+text = "Try Again"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
