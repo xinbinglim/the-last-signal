@@ -264,7 +264,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -371,11 +371,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fkf2u"]
-radius = 43.5
+radius = 38.0
 height = 137.0
 
 [node name="Player" type="CharacterBody2D"]
@@ -384,21 +384,21 @@ script = SubResource("GDScript_va2xi")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_tkwlq")
-animation = &"hit"
-frame_progress = 0.22584957
+animation = &"idle"
+frame_progress = 0.260314
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-11, 59)
+position = Vector2(-5, 58)
 shape = SubResource("CapsuleShape2D_fkf2u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 
 [node name="Label" type="RichTextLabel" parent="."]
-offset_left = -301.0
-offset_top = -162.0
-offset_right = -205.0
-offset_bottom = -139.0
+offset_left = -1051.0
+offset_top = -591.0
+offset_right = -955.0
+offset_bottom = -568.0
 scale = Vector2(2, 2)
 theme_override_fonts/normal_font = ExtResource("71_fkf2u")
 text = "Score: 0"
