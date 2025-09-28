@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://vqybqdwhrdpd"]
+[gd_scene load_steps=6 format=3 uid="uid://vqybqdwhrdpd"]
 
-[ext_resource type="Texture2D" uid="uid://b8eopsu8wgg1e" path="res://Assets/Game Over.png" id="1_chhgw"]
+[ext_resource type="Texture2D" uid="uid://dwxj28dwr283b" path="res://Assets/ui-bg.jpg" id="1_oonl0"]
+[ext_resource type="Texture2D" uid="uid://odpxvq6ww5w1" path="res://Assets/Game Title.png" id="2_sk1k3"]
+[ext_resource type="FontFile" uid="uid://c1ypibmkiuevh" path="res://Assets/Chakra_Petch/ChakraPetch-Bold.ttf" id="3_ffx61"]
+[ext_resource type="FontFile" uid="uid://6ylovyuwj103" path="res://Assets/Alex_Brush/AlexBrush-Regular.ttf" id="3_sk1k3"]
 
 [sub_resource type="GDScript" id="GDScript_chhgw"]
 script/source = "extends Node2D
@@ -23,12 +26,18 @@ func _on_button_pressed() -> void:
 [node name="Game Over" type="Node2D"]
 script = SubResource("GDScript_chhgw")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1285.0
+offset_bottom = 728.0
+texture = ExtResource("1_oonl0")
+expand_mode = 1
+
 [node name="Title" type="TextureRect" parent="."]
-offset_left = 142.0
-offset_top = 133.0
-offset_right = 1128.0
-offset_bottom = 1691.0
-texture = ExtResource("1_chhgw")
+offset_left = 150.0
+offset_top = 10.0
+offset_right = 1136.0
+offset_bottom = 1568.0
+texture = ExtResource("2_sk1k3")
 expand_mode = 1
 
 [node name="Button" type="Button" parent="."]
@@ -37,13 +46,52 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 481.0
-offset_top = 403.0
-offset_right = 639.5
-offset_bottom = 461.0
+offset_left = 485.0
+offset_top = 522.0
+offset_right = 643.5
+offset_bottom = 580.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
-text = "Try Again"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.8054623, 0.91651654, 0.99489206, 1)
+theme_override_fonts/font = ExtResource("3_ffx61")
+theme_override_font_sizes/font_size = 29
+text = "Try Again?"
+
+[node name="Ending" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 170.0
+offset_top = 321.0
+offset_right = 1106.0
+offset_bottom = 422.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.94509804, 0.34117648, 0.6117647, 1)
+theme_override_colors/font_shadow_color = Color(0.944191, 0.34157568, 0.6123862, 1)
+theme_override_fonts/normal_font = ExtResource("3_ffx61")
+theme_override_font_sizes/normal_font_size = 50
+text = "Game Over"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Details" type="RichTextLabel" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 177.0
+offset_top = 356.0
+offset_right = 1113.0
+offset_bottom = 457.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("3_sk1k3")
+theme_override_font_sizes/normal_font_size = 32
+text = "\"Against all odds, your precise calculations kept the station alive. The rescue ship finds everyone safe and the plague cure intact. You've saved both the crew and humanity's future.\""
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

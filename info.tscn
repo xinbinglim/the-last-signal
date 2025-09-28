@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://b453bo1ew6n0x"]
+
+[ext_resource type="Texture2D" uid="uid://dwxj28dwr283b" path="res://Assets/ui-bg.jpg" id="1_apbm5"]
+[ext_resource type="Texture2D" uid="uid://odpxvq6ww5w1" path="res://Assets/Game Title.png" id="2_dnune"]
+[ext_resource type="FontFile" uid="uid://c1ypibmkiuevh" path="res://Assets/Chakra_Petch/ChakraPetch-Bold.ttf" id="3_qjc5n"]
+[ext_resource type="Texture2D" uid="uid://hjsn8nnt2g0y" path="res://Assets/Close_BTN2.png" id="4_3rpuc"]
+[ext_resource type="Texture2D" uid="uid://crcndwexov3ke" path="res://Assets/Close_BTN.png" id="5_vi5j5"]
+
+[sub_resource type="GDScript" id="GDScript_lvtn7"]
+resource_name = "Info"
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+
+
+func _on_exit_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://UI.tscn\")
+"
+
+[node name="Info" type="Node2D"]
+script = SubResource("GDScript_lvtn7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1285.0
+offset_bottom = 728.0
+texture = ExtResource("1_apbm5")
+expand_mode = 1
+
+[node name="Title" type="TextureRect" parent="."]
+offset_left = 143.0
+offset_top = 52.0
+offset_right = 1129.0
+offset_bottom = 1610.0
+texture = ExtResource("2_dnune")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 112.0
+offset_top = 218.0
+offset_right = 1111.0
+offset_bottom = 447.0
+theme_override_fonts/normal_font = ExtResource("3_qjc5n")
+theme_override_font_sizes/normal_font_size = 36
+text = "How to Play?
+- Use arrow keys to move characters
+- touch the coins to get points
+- avoid touching the enemy or else you will die
+"
+
+[node name="Exit" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1165.0
+offset_top = 603.0
+offset_right = 1375.0
+offset_bottom = 813.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4_3rpuc")
+texture_hover = ExtResource("5_vi5j5")
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

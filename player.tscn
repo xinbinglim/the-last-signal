@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://bjb7qbhtqcuxl"]
+[gd_scene load_steps=75 format=3 uid="uid://bjb7qbhtqcuxl"]
 
 [ext_resource type="Texture2D" uid="uid://bela3ke0fq3pu" path="res://Assets/Fighter sprites/fighter_combo_0064.png" id="2_s7jk6"]
 [ext_resource type="Texture2D" uid="uid://b8kvjwl3xry7m" path="res://Assets/Fighter sprites/fighter_combo_0065.png" id="3_feeoa"]
@@ -69,6 +69,7 @@
 [ext_resource type="Texture2D" uid="uid://khr3a26thlq0" path="res://Assets/Fighter sprites/fighter_walk_0013.png" id="68_nure8"]
 [ext_resource type="Texture2D" uid="uid://5mftipmijsuv" path="res://Assets/Fighter sprites/fighter_walk_0014.png" id="69_doy3c"]
 [ext_resource type="Texture2D" uid="uid://p2rmbwfkt0k8" path="res://Assets/Fighter sprites/fighter_walk_0015.png" id="70_o4jhu"]
+[ext_resource type="FontFile" uid="uid://c1ypibmkiuevh" path="res://Assets/Chakra_Petch/ChakraPetch-Bold.ttf" id="71_fkf2u"]
 [ext_resource type="Texture2D" uid="uid://54qk6qqjaorj" path="res://Assets/Fighter sprites/fighter_walk_0016.png" id="71_o5ler"]
 
 [sub_resource type="GDScript" id="GDScript_va2xi"]
@@ -113,11 +114,12 @@ func _on_COIN_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: 
 
 
 func update_score(score):
-	$Label.text = str(score)
-"
+	$Label.text = 'Score: ' + str(score)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_op7ga"]
-size = Vector2(100, 170)
+
+func _on_environmental_control_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	get_tree().change_scene_to_file(\"res://Environmental Control.tscn\")
+"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tkwlq"]
 animations = [{
@@ -372,12 +374,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fkf2u"]
+radius = 43.5
+height = 137.0
+
 [node name="Player" type="CharacterBody2D"]
 script = SubResource("GDScript_va2xi")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-7, 43)
-shape = SubResource("RectangleShape2D_op7ga")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
@@ -385,13 +387,18 @@ sprite_frames = SubResource("SpriteFrames_tkwlq")
 animation = &"hit"
 frame_progress = 0.22584957
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-11, 59)
+shape = SubResource("CapsuleShape2D_fkf2u")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 
 [node name="Label" type="RichTextLabel" parent="."]
-offset_left = -305.0
-offset_top = -168.0
-offset_right = -283.5
-offset_bottom = -145.0
+offset_left = -301.0
+offset_top = -162.0
+offset_right = -205.0
+offset_bottom = -139.0
 scale = Vector2(2, 2)
-text = "0"
+theme_override_fonts/normal_font = ExtResource("71_fkf2u")
+text = "Score: 0"

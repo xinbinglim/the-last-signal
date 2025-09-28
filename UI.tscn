@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkh05ibrbiyxn"]
+[gd_scene load_steps=8 format=3 uid="uid://dkh05ibrbiyxn"]
 
 [ext_resource type="Texture2D" uid="uid://dwxj28dwr283b" path="res://Assets/ui-bg.jpg" id="1_b3bc3"]
 [ext_resource type="Script" uid="uid://db2t52mxsroln" path="res://ui.gd" id="1_qui0h"]
 [ext_resource type="Texture2D" uid="uid://odpxvq6ww5w1" path="res://Assets/Game Title.png" id="2_g6l6n"]
-[ext_resource type="Texture2D" uid="uid://cmxhg0faaxnmi" path="res://Assets/Start_BTN.png" id="3_qui0h"]
+[ext_resource type="Texture2D" uid="uid://dhlvsqwpao730" path="res://Assets/button/5.png" id="4_2n5f6"]
+[ext_resource type="Texture2D" uid="uid://ghuyitd55n5u" path="res://Assets/button/6.png" id="5_27c8x"]
+[ext_resource type="Texture2D" uid="uid://dsvl4m0vwdrrk" path="res://Assets/button/7.png" id="6_i1vam"]
+[ext_resource type="Texture2D" uid="uid://c5vdkl5nyn6nl" path="res://Assets/button/8.png" id="7_q77pa"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -40,12 +43,32 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -205.0
-offset_top = 28.5
-offset_right = 205.0
-offset_bottom = 149.5
+offset_left = -213.0
+offset_top = 24.0
+offset_right = 1201.0
+offset_bottom = 2024.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("3_qui0h")
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("4_2n5f6")
+texture_hover = ExtResource("5_27c8x")
+
+[node name="Info" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = 160.0
+offset_right = 1199.0
+offset_bottom = 2160.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("6_i1vam")
+texture_hover = ExtResource("7_q77pa")
 
 [connection signal="pressed" from="Start_Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Info" to="." method="_on_info_pressed"]
